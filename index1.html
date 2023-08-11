@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<style>
+    :root{
+        --blur:10px;
+        --spacing:10px;
+        --base:#ffc600;
+
+    }
+    body{
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 100;
+        background-color: #1959cf;
+        color: white;
+    }
+    img{
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+    }
+</style>
+<body>
+  <div class="controls">
+      <h2>Update CSS using <span class="h1">JS</span></h2>
+
+      <label for="spacing">Spacing:</label>
+      <input type="range" min="10" name="spacing" max="100" value="10" data-sizing="px">
+
+      <label for="blur">Blur:</label>
+      <input type="range" min="0" max="25" name="blur" value="0" data-sizing="px">
+
+      <label for="Base">Base:</label>
+      <input type="color" name="base" value="#ffc600">
+
+      <img src="./Food6.webp" alt="">
+  </div>  
+<script>
+    const inputs=document.querySelectorAll('.controls input');
+    function updateChanges(){
+        const suffix=this.dataset.sizing || "";
+        document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix)
+    }
+
+    inputs.forEach(input=>input.addEventListener('change',updateChanges))
+    inputs.forEach(input=>input.addEventListener('mousemove',updateChanges))
+</script>
+</body>
+</html>

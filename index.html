@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="./style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing wit css variables</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update Css variables with <span class="color">Js</span></h1>
+        <br><br>
+        <label for="spacing">Spacing: </label><input type="range" name="spacing" data-sizing="px" min="10" max="25"  class="controls"  value="10">
+        <label for="blur">Blur: </label><input type="range" name="blur"  min="0" data-sizing="px"max="25" class="controls" value="10">
+        <label for="color">Base color: </label><input type="color" name="base" class="controls" value="#5A8ED3">
+        <div class="image-cont">
+            <img src="./images.jpg" alt="Bg-image">
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
